@@ -1,0 +1,20 @@
+postgresql:
+  image: sameersbn/postgresql:latest
+  environment:
+    - DB_USER=gitlab_ci
+    - DB_PASS=password
+    - DB_NAME=gitlab_ci_production
+redis:
+  image: sameersbn/redis:latest
+ci:
+  image: sameersbn/gitlab-ci:7.9.3
+  links:
+   - redis:redisio
+   - postgresql:postgresql
+  ports:
+    - "10080:80"
+  environment:
+   - GITLAB_CI_HOST=ci.damagehead.com
+   - GITLAB_URL=https://git.damagehead.com
+   - GITLAB_APP_ID=''
+   - GITLAB_APP_SECRET=''
