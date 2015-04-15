@@ -14,7 +14,7 @@ ci:
   ports:
     - "10080:80"
   environment:
-   - GITLAB_CI_HOST=ci.damagehead.com
-   - GITLAB_URL=https://git.damagehead.com
+   - GITLAB_CI_HOST=ci.ambnetwork.dev
+   - GITLAB_URL=https://git.ambnetwork.dev
    - GITLAB_APP_ID=''
    - GITLAB_APP_SECRET=''
